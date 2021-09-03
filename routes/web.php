@@ -24,3 +24,7 @@ Route::get('/postpageclothing', function () {
 Route::get('/postpageshoes', function () {
     return view('postpageshoes');
 });
+
+Route::get('/cart', function () {
+    return view('cart');
+});
