@@ -32,6 +32,11 @@
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
+    <!-- css  -->
+
+    <link rel="stylesheet" href="{{ URL::asset('css/navbar.css') }}">
+
+
 
     <title>Clothing</title>
 </head>
@@ -118,19 +123,19 @@
                     </a>
                 </li>
 
+                <li class="nav-item favourite121 dropdown">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i style="font-size:26px;" class="fas fa-heart"></i>
+                    </a>
+                </li>
+
+
+
 
 
 
 
             </ul> <br>
-            <form class="form-inline my-2 my-lg-0">
-                <div class="search-box">
-                    <input class="search-input" type="text" name="" placeholder="Search">
-                    <a href="#" class="search-btn">
-                        <i class="fas fa-search"></i>
-                    </a>
-                </div>
-            </form>
 
 
         </div>
@@ -151,7 +156,12 @@
     }
 
     .shopingcart {
-        margin-left: 700px;
+        margin-left: 860px;
+    }
+
+    .favourite121 {
+        margin-left: -49px;
+
     }
 
     .navbar-light .navbar-nav .nav-link {
@@ -167,7 +177,6 @@
     .navbar-light .navbar-nav .nav-link:hover {
         color: #CACFD2;
         float: center;
-        font-size: 17.5px;
         font-family: 'DM Sans', sans-serif;
         font-weight: 800;
     }
@@ -188,7 +197,9 @@
         background-color: #F1FAEE;
     }
 
-
+    .useri {
+        color: black;
+    }
 
     .search-box {
         position: absolute;
@@ -197,6 +208,13 @@
         transform: translate(-50%, -50%);
         background: #F1FAEE;
         height: 70px;
+        border-radius: 50px;
+        padding: 10px;
+    }
+
+    .searchbari {
+        background: #F1FAEE;
+        height: 50px;
         border-radius: 50px;
         padding: 10px;
     }
@@ -237,6 +255,9 @@
         width: 200px;
         padding: 0 7px;
     }
+
+
+
 </style>
 
 

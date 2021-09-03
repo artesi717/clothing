@@ -1,0 +1,5 @@
+.foooteri {
+    background: rgb(62, 99, 152);
+    background: linear-gradient(90deg, rgba(62, 99, 152, 1) 0%, rgba(109, 166, 246, 1) 58%, rgba(77, 145, 241, 1) 100%);
+    color: white;
+}
