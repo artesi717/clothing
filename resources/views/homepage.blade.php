@@ -104,75 +104,21 @@
 <h1 class="latestdr">Latest Drops</h1>
 <div class="main" data-aos="fade-right">
     <ul class="cards">
+        @foreach($posts as $post)
         <li class="cards_item">
+            <a href="/postpageclothing/{{$post->id}}">
             <div class="card">
-                <div class="card_image"><img class="cardsfoto" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/cj2jbeomutdbn0tcrbza/air-max-97-shoes-nsRddC.png"></div>
+                <div class="card_image"><img class="cardsfoto" src="/storage/{{$post->image}}"></div>
                 <div class="card_content">
                     <a> <i id="favourite" class="far fa-heart"></i> </a>
-                    <h1 class="card_title1">170€</h1> <br>
+                    <h1 class="card_title1">{{$post->price}}</h1> <br>
                     <!--  <p class="card_text">Size : 40-45 <br> Available colors : Black , red , green</p> -->
-                    <h2 class="card_title">Nike Air Max 97</h2> <br>
+                    <h2 class="card_title">{{$post->name}}</h2> <br>
                 </div>
             </div>
+            </a>
         </li>
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><img class="cardsfoto" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/ebad848a-13b1-46d5-a85e-49b4b6a4953c/air-force-1-le-older-shoe-cJV32q.png"></div>
-                <div class="card_content">
-                    <a href=""> <i id="favourite" class="far fa-heart"></i> </a>
-                    <h1 class="card_title1">97€</h1> <br>
-                    <!--  <p class="card_text">Size : 40-45 <br> Available colors : Black , red , green</p> -->
-                    <h2 class="card_title">Nike Air Force 1</h2> <br>
-                </div>
-            </div>
-        </li>
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><a href="postpageclothing"><img class="cardsfoto" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/463c4fbf-d4a7-420b-af4b-3d563ae3ed7b/sportswear-tech-fleece-hoodie-Rd23Gq.png"></div></a>
-                <div class="card_content">
-                    <a href=""> <i id="favourite" class="far fa-heart"></i> </a>
-                    <h1 class="card_title1">106€</h1> <br>
-                    <!--  <p class="card_text">Size : 40-45 <br> Available colors : Black , red , green</p> -->
-                    <h2 class="card_title">Nike Sportswear Tech Fleece</h2> <br>
-                </div>
-            </div>
-        </li>
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><img class="cardsfoto" src="https://underarmour.scene7.com/is/image/Underarmour/1342652-001_SLF_SL?rp=standard-0pad|pdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=F0F0F0&wid=566&hei=708&size=566,708"></div>
-                <div class="card_content">
-                    <a href=""> <i id="favourite" class="far fa-heart"></i> </a>
-                    <h1 class="card_title1">16€</h1> <br>
-                    <!--  <p class="card_text">Size : 40-45 <br> Available colors : Black , red , green</p> -->
-                    <h2 class="card_title">Youth UA Scrimmage 2.0 Backpack</h2> <br>
-                    <!-- <button class="btn card_btn">Buy now</button> -->
-                </div>
-            </div>
-        </li>
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><img class="cardsfoto" src="https://i8.amplience.net/i/jpl/jd_390387_b?qlt=92&w=600&h=765&v=1"></div>
-                <div class="card_content">
-                    <a href=""> <i id="favourite" class="far fa-heart"></i> </a>
-                    <h1 class="card_title1">28€</h1> <br>
-                    <!--  <p class="card_text">Size : 40-45 <br> Available colors : Black , red , green</p> -->
-                    <h2 class="card_title">The North Face Easy T-shirt</h2> <br>
-                    <!-- <button class="btn card_btn">Buy now</button> -->
-                </div>
-            </div>
-        </li>
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><img class="cardsfoto" src="https://ridestore.imgix.net/catalog/product/E/5/E5862_1.jpg"></div>
-                <div class="card_content">
-                    <a href=""> <i id="favourite" class="far fa-heart"></i> </a>
-                    <h1 class="card_title1">62€</h1> <br>
-                    <!--  <p class="card_text">Size : 40-45 <br> Available colors : Black , red , green</p> -->
-                    <h2 class="card_title">TBlue Logo Regular Fit BG Trefoil Sports Jacket</h2> <br>
-                    <!-- <button class="btn card_btn">Buy now</button> -->
-                </div>
-            </div>
-        </li>
+        @endforeach
     </ul>
 </div>
 
