@@ -160,37 +160,29 @@
 </body>
 
 <style>
-
     .login {
         font-size: 26px;
         margin-left: 640px;
     }
-
     .carta121 {
         width: auto;
     }
-
     .mbiheader {
         height: 10px;
         background-color: white;
         width: 100%;
         padding: 10px;
     }
-
     .navbar {
         background: rgb(29, 53, 87);
         background: linear-gradient(90deg, rgba(29, 53, 87, 1) 0%, rgba(107, 168, 255, 1) 58%, rgba(181, 202, 232, 1) 100%);
     }
-
     .shopingcart {
         margin-left: -40px;
     }
-
     .favourite121 {
         margin-left: -49px;
-
     }
-
     .navbar-light .navbar-nav .nav-link {
         color: white;
         float: center;
@@ -200,34 +192,27 @@
         margin-left: 30px;
         margin-right: 30px;
     }
-
     .navbar-light .navbar-nav .nav-link:hover {
         color: #CACFD2;
         float: center;
         font-family: 'DM Sans', sans-serif;
         font-weight: 800;
     }
-
     .navbar-light .navbar-nav .nav-link:focus {
         color: #CACFD2;
     }
-
-
     .btn {
         padding: 5px 10px;
         color: white;
         border: 1px solid white;
     }
-
     .btn:hover {
         color: black;
         background-color: #F1FAEE;
     }
-
     .useri {
         color: black;
     }
-
     .search-box {
         position: absolute;
         top: 50%;
@@ -238,14 +223,12 @@
         border-radius: 50px;
         padding: 10px;
     }
-
     .searchbari {
         background: #F1FAEE;
         height: 50px;
         border-radius: 50px;
         padding: 10px;
     }
-
     .search-btn {
         color: white;
         float: right;
@@ -258,13 +241,11 @@
         align-items: center;
         transition: 2s;
     }
-
     .fa-search {
         background: white;
         font-size: 24px;
         color: #1D3557;
     }
-
     .search-input {
         border: none;
         background: none;
@@ -277,7 +258,6 @@
         line-height: 50px;
         width: 0;
     }
-
     .search-box:hover>.search-input {
         width: 200px;
         padding: 0 7px;

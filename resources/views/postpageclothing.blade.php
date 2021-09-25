@@ -4,32 +4,21 @@
 
     <div class="row1">
         <div class="foto">
-            <img class="fotoeproduktit" src="https://i1.t4s.cz/products/cu4489-442/nike-m-nsw-tech-fleece-hoody-300999-cu4489-442.jpg" alt="">
+            <img class="fotoeproduktit" src="/storage/{{$post->image}}" alt="">
         </div>
         <div class="information">
 
             <!-- Ketu shenohet kategoria -->
-            <h3 class="categoria">Mens / Tracksuit</h3>
+            <h3 class="categoria">{{$post->category}}</h3>
 
             <!-- Ketu shenohet emri i produktit -->
-            <h1 class="emriproductit">Hooded sweatshirt Nike M NSW TECH FLEECE HOODY</h1> <br>
+            <h1 class="emriproductit">{{$post->name}}</h1> <br>
 
             <!-- Ketu shenohet cmimi -->
-            <h2 class="cmimiproductit">95€</h2>
+            <h2 class="cmimiproductit">{{$post->price}}</h2>
             <hr class="hr1">
 
-            <!-- Ketu shenohet ngjyra e produktit -->
-            <h1 class="ngjyraproductit">Color : <b>Blue</b></h1>
-            <br>
-            <div class="inline">
-                <h1 class="ngjyraproductit">Avaliable colors :</h1>
-                <button style="background-color: #E74C3C;" class="colour1 ngjyra">&nbsp;</button>
-                <button style="background-color: #5DADE2;" class="colour2 ngjyra">&nbsp;</button>
-                <button style="background-color: #F1C40F;" class="colour3 ngjyra">&nbsp;</button>
-                <button style="background-color: #27AE60;" class="colour4 ngjyra">&nbsp;</button>
-                <button style="background-color: #A6ACAF;" class="colour5 ngjyra">&nbsp;</button>
-                <button style="background-color: #D35400;" class="colour6 ngjyra">&nbsp;</button>
-            </div>
+
             <br><br>
             <button type="button" class="btn btn-primary madhesiaproductit" data-toggle="modal" data-target="#exampleModalCenter">
                 Size & Fit Guide
@@ -44,6 +33,8 @@
                 <button class="xxl-size butonimadhsise">XXL</button>
             </div>
             <br> <br>
+
+
             <div class="inline">
                 <select class="form-select butoniquantity" aria-label="Default select example">
                     <option selected>Quantity</option>
@@ -64,6 +55,7 @@
 
 
             </div>
+
             <br><br>
             <!-- Ketu shenohet description i produktit -->
             <h1 class="descriptionprod">What's it do?</h1>
@@ -102,53 +94,111 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class=" emrimodul1" id="exampleModalLongTitle">Log in to use this feature</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="page">
+@guest
+<form method="post" action="{{ route('login') }}">
+    @csrf
+    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class=" emrimodul1" id="exampleModalLongTitle">Log in to use this feature</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="page">
 
-                    <!-- ketu shenohet email -->
+                        <!-- ketu shenohet email -->
 
-                    <label class="field field_v1">
-                        <input class="field__input" placeholder="&nbsp;">
-                        <span class="field__label-wrap">
-                            <span class="field__label">Email</span>
-                        </span>
-                    </label>
+                        <label class="field field_v1">
+                            <input id="phone" type="phone" placeholder="&nbsp;" class="field__input form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
 
-                    <!-- ketu shenohet password -->
+                            @error('phone')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
 
-                    <label class="field field_v2">
-                        <input class="field__input" placeholder="&nbsp;">
-                        <span class="field__label-wrap">
-                            <span class="field__label">Password</span>
-                        </span>
-                    </label>
-                    <!-- <label class="field field_v3">
+                            <span class="field__label-wrap">
+                                <span class="field__label">Phone</span>
+                            </span>
+                        </label>
+
+
+                        <!-- ketu shenohet password -->
+
+                        <label class="field field_v2">
+                            <input id="password" type="password" placeholder="&nbsp;" class="field__input form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+    
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                            <span class="field__label-wrap">
+                                <span class="field__label">Password</span>
+                            </span>
+                        </label>
+
+                        <!-- <label class="field field_v3">
                         <input class="field__input" placeholder="e.g. melnik909@ya.ru">
                         <span class="field__label-wrap">
                             <span class="field__label">E-mail</span>
                         </span>
                     </label> -->
-                </div>
-                <a style="text-align:right;" class="forgotten121" href="">Forgotten your password?</a> <br> <br>
-                <p class="terms11">By logging in, you agree to our Privacy Policy and Terms of Use.</p> <br>
-                <a href="#" class="myButton313">SIGN IN</a>
+                    </div>
+                    <a style="text-align:right;" class="forgotten121" href="">Forgotten your password?</a> <br> <br>
+                    <p class="terms11">By logging in, you agree to our Privacy Policy and Terms of Use.</p> <br>
 
+                    <button class="myButton313" type="submit">Sign In</button>
+                    {{ URL::previous() }}
+
+                </div>
+                <div class="modal-footer">
+                    Not a Member? &nbsp; <a href="">Join us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+@endguest
+
+@auth
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> <i style="color:green;" class="fas fa-check-circle"></i> &nbsp; (1) Item Added To Bag </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body productadded">
+                <!-- emri -->
+                <div class="container31">
+                    <div class="image">
+                        <img class="fotofavourite" src="/storage/{{$post->image}}" alt="">
+                    </div>
+                    <div class="text">
+                        <!-- ketu del fotoja e produktit bashk me emer dhe cmim  -->
+                        <h2 class="emriproduktitmodul">{{$post->name}}</h2>
+                        <h1 class="sizemodul1">Size :{{$post->size}}</h1>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                Not a Member? &nbsp; <a href="">Join us</a>
+                <button type="button" class="btn btn-secondary continueshop" data-dismiss="modal">Continue shopping</button>
+                <a class="viewbag btn btn-primary" href="/cart">View Bag & Check Out</a>
             </div>
         </div>
     </div>
 </div>
+
+@endauth
 
 
 <!-- Modal -->
@@ -165,12 +215,12 @@
                 <!-- emri -->
                 <div class="container31">
                     <div class="image">
-                        <img class="fotofavourite" src="https://i1.t4s.cz/products/cu4489-442/nike-m-nsw-tech-fleece-hoody-300999-cu4489-442.jpg" alt="">
+                        <img class="fotofavourite" src="/storage/{{$post->image}}" alt="">
                     </div>
                     <div class="text">
                         <!-- ketu del fotoja e produktit bashk me emer dhe cmim  -->
-                        <h2 class="emriproduktitmodul">Hooded sweatshirt Nike M NSW TECH FLEECE HOODY</h2>
-                        <h1 class="sizemodul1">Size : XL</h1>
+                        <h2 class="emriproduktitmodul">{{$post->name}}</h2>
+                        <h1 class="sizemodul1">Size :{{$post->size}}</h1>
                     </div>
                 </div>
             </div>
@@ -303,6 +353,7 @@
         background: linear-gradient(90deg, rgba(136, 181, 246, 1) 0%, rgba(61, 116, 193, 1) 58%, rgba(21, 69, 136, 1) 100%);
         border-radius: 2px;
         cursor: pointer;
+        width: 100%;
         color: #ffffff;
         font-weight: 800;
         font-size: 16px;

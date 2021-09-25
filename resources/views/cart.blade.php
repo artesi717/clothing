@@ -19,18 +19,26 @@
       <h1 class="yourbag11">Your Bag &nbsp; &nbsp; <b style="font-size: 15px; ">(1) item</b></h1>
       <hr style="width: 130%;"> <br>
 
+
+
+
+       
+
+
+
       <!-- produkti -->
+     
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="https://i1.t4s.cz/products/cu4489-442/nike-m-nsw-tech-fleece-hoody-300999-cu4489-442.jpg" class="img-fluid rounded-start" alt="...">
+          <img src="/storage/{{$post->image}}" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-8">
           <div class="card-body trupikartes">
-            <h5 class="card-title emriproduktit131">Hooded sweatshirt Nike M NSW TECH FLEECE HOODY</h5>
-            <h5 style="float:right; margin-top:-56px; font-weight:800;" class="card-title">95€</h5>
+            <h5 class="card-title emriproduktit131">{{$post->name}}</h5>
+            <h5 style="float:right; margin-top:-56px; font-weight:800;" class="card-title">{{$post->price}}$</h5>
 
             <p class="card-text cardatekst">Color: White / Midnight Green - 105</p>
-            <p class="card-text cardatekst">Size: XL</p>
+            <p class="card-text cardatekst">Size: {{$post->size}}</p>
 
             <select class="form-select butoniquantity" aria-label="Default select example">
               <option selected>Quantity</option>
@@ -45,39 +53,9 @@
           </div>
           <a class="berllog" href=""><i class="fas fa-trash"></i></a>
         </div>
-      </div> <br>
-      <!-- produkti ne fund -->
-
-      <!-- produkti -->
-      <hr style="width: 130%;">
-
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="https://cdn.shopify.com/s/files/1/0255/9429/8467/products/air-jordan-1-retro-high-og-dark-mocha-555088-105_1_beseka_1800x1800.jpg?v=1611640031" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body trupikartes">
-            <h5 class="card-title emriproduktit131">Jordan 1 Retro High</h5>
-            <h5 style="float:right; margin-top:-56px; font-weight:800;" class="card-title">430€</h5>
-
-            <p class="card-text cardatekst">Color: Dark mocha</p>
-            <p class="card-text cardatekst">Size: 43</p>
-
-            <select class="form-select butoniquantity" aria-label="Default select example">
-              <option selected>Quantity</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-
-          </div>
-          <a class="berllog" href=""><i class="fas fa-trash"></i></a>
-        </div>
-      </div> <br>
-      <!-- produkti ne fund -->
+      </div>
+   <br>
+     
 
       <hr style="width: 130%;">
 
@@ -87,7 +65,7 @@
   <div class="column31313" style="background-color:#f7f7f7;">
     <h2 class="ordersummary">Order Summary</h2> <br>
 
-    <p style="font-size: 13px;">Subtotal (1): <b style="float:right; font-weight:400;">95€</b>
+    <p style="font-size: 13px;">Subtotal (1): <b style="float:right; font-weight:400;">{{$post->price}}$</b>
     <p style="font-size: 13px;">Subtotal (1): <b style="float:right; font-weight:400;">430€</b> </p> <br>
     <hr> <br>
 
@@ -101,6 +79,11 @@
 
   </div>
 </div>
+
+
+
+
+
 
 <br><br><br><br><br>
 <br><br><br><br><br>
